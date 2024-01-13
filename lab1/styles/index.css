@@ -1,5 +1,5 @@
 /* Getting rid of default styles */
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -8,7 +8,7 @@
     font-family:"Popins",sans-serif;
 }
 
-.title{
+.title {
     text-align: center;
     padding: 50px;
     font-family: Arial, Helvetica, sans-serif;
@@ -21,16 +21,20 @@
     /* initializing bg-image and bg-image-opacity variables  */
     --bg-image:url("../images/BackGroundImage.jpg");
     --bg-image-opacity:.6;
-    isolation: isolate;    
+    isolation: isolate;
 }
 
 .form_bg::after { 
     content:'';
-    position: absolute;
+    position: fixed;
     /* inset is a shorthand for top,bottom,left and right. Typically used when the position is absolute */
     inset: 0;
     z-index: -1;
     background-image: var(--bg-image);
+    height: 100%;
+    width: 100%;
+    background-position: center center;
+    
     opacity: var(--bg-image-opacity);
     background-size: cover;
     background-repeat: no-repeat;
@@ -52,7 +56,7 @@ p {
     line-height: 40px;
 }
 
-a {
+.btn {
     /* border: 2px solid black; */
     padding: 12px;
     border-radius: 5px;
@@ -62,13 +66,83 @@ a {
     text-decoration: none;
 }
 /* link is for unvisited */
-a:link,a:visited{
+.btn:link,.btn:visited {
     text-decoration: none;
 }
 
-a:hover{
+.btn:hover {
     background-color: rgb(20, 51, 70) ;
 
 }
+
+/* carousel configuration */
+img {
+    display: block;
+    /* look more into max-width */
+    max-width: 100%;
+    /* border: 2px solid darkblue; */
+}
+
+.slider {
+    border: 5px solid rgb(11, 11, 21);
+    margin: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 20px;
+    overflow: hidden;
+    height: 40rem;
+    padding: 5px;
+    box-shadow: 5px 5px 2px #7f3f00;
+    border-radius: 6px;
+
+}
+
+.gallery {
+
+    overflow: scroll;
+    /* scroll-snap-type on the parent,scroll-snap-align on the children */
+    scroll-snap-type: y mandatory;
+    /* border: 2px solid orange; */
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    border: 2px solid rgb(26,9,10);
+    border-radius: 5px;
+}
+
+.gallery img {
+    scroll-snap-align: start;
+    margin-bottom: 10px;
+    width: 100%;
+    height: 100%;
+    object-position: left;
+    object-fit: cover;
+}
+
+.left_nav {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border: 2px solid rgb(26, 9, 10);
+    border-radius: 5px;
+}
+
+.left_nav a {
+    height: 200px;
+    display: flex;
+    margin-bottom: 10px;
+
+}
+
+.left_nav img {
+    object-position: left;
+    object-fit: cover;
+}
+
+.left_nav img:hover {
+    transform: scale(1.05);
+}
+
+
+
+
 
 
