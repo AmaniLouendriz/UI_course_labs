@@ -1,0 +1,74 @@
+/* Getting rid of default styles */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family:"Popins",sans-serif;
+}
+
+.title{
+    text-align: center;
+    padding: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    background-color: rgb(210, 210, 210,0.6);
+    letter-spacing: 0.2rem;
+}
+
+.form_bg {
+    /* initializing bg-image and bg-image-opacity variables  */
+    --bg-image:url("../images/BackGroundImage.jpg");
+    --bg-image-opacity:.6;
+    isolation: isolate;    
+}
+
+.form_bg::after { 
+    content:'';
+    position: absolute;
+    /* inset is a shorthand for top,bottom,left and right. Typically used when the position is absolute */
+    inset: 0;
+    z-index: -1;
+    background-image: var(--bg-image);
+    opacity: var(--bg-image-opacity);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.form_text {
+    background-color: rgb(210, 210, 210,0.8);
+    margin: 5rem auto;
+    align-items: center;
+    padding: 50px;
+    border-radius: 15px;
+    text-align: center;
+    width: 50rem;
+    max-width: 100%;
+}
+
+p {
+    padding: 30px;
+    line-height: 40px;
+}
+
+a {
+    /* border: 2px solid black; */
+    padding: 12px;
+    border-radius: 5px;
+    background-color: rgb(98, 135, 158);
+    color: #fff;
+    margin: 0 auto;
+    text-decoration: none;
+}
+/* link is for unvisited */
+a:link,a:visited{
+    text-decoration: none;
+}
+
+a:hover{
+    background-color: rgb(20, 51, 70) ;
+
+}
+
+
