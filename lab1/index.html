@@ -13,6 +13,58 @@
             <form id="OPL_form">
                 <p>We are conducting some research and we would love to know your thoughts about Ottawa Public Library website.</p>
                 <a class="btn" href="https://biblioottawalibrary.ca/en" title="Have a look at OPL" target="_blank">Explore the website</a>
+                    <!-- FORM -->   
+                <h2>Ottawa Public Libaray Experience Survey </h2>
+
+                  <!-- RADIO BUTTON --> 
+                  <label for="radio">Which language do you primarily read books in? (select one)</label><br>
+                    <input type="radio" id="French" name="language" value="French">
+                    <label for="French">French</label><br>
+                    <input type="radio" id="English" name="language" value="English">
+                    <label for="English">English</label><br>
+                    <input type="radio" id="Other" name="language" value="Other">
+                    <label for="Other">Other</label><br><br>
+
+
+                <!-- LIST --> 
+                    <label for="frequency">How often do you find what you are looking for in your preferrred reading language?</label> 
+                    <select name="frequency" id="frequency">
+                        <option value="(Select One)">(Select One)</option> 
+                        <option value="Always">Always</option>
+                        <option value="Sometimes">Sometimes</option> 
+                        <option value="Often">Often</option> 
+                        <option value="Rarely">Rarely</option> 
+                        <option value="Never">Never</option> 
+                    </select><br><br>
+
+                <!-- MULTIPLE SELECT BUTTON -->
+                <label for="checkbox">Which book genres do you read? (select all that apply)</label><br>
+                    <input type="checkbox" id="g1" name="g1" value="Fiction">
+                  <label for="vehicle1"> Fiction</label><br>
+                  <input type="checkbox" id="g2" name="g2" value="Non-Fiction">
+                  <label for="vehicle2"> Non-Fiction</label><br>
+                  <input type="checkbox" id="g3" name="g3" value="Science Fiction">
+                  <label for="vehicle3"> Science Fiction</label><br>
+                  <input type="checkbox" id="g4" name="g4" value="Fantasy">
+                  <label for="vehicle2"> Fantasy</label><br>
+                  <input type="checkbox" id="g5" name="g5" value="Romance">
+                  <label for="vehicle2"> Romance</label><br>
+                  <input type="checkbox" id="g6" name="g6" value="Horror">
+                  <label for="vehicle2"> Horror</label><br>
+                  <input type="checkbox" id="g7" name="g7" value="Poetry">
+                  <label for="vehicle2"> Poetry</label><br>
+                  <input type="checkbox" id="g8" name="g8" value="Humor/Satire">
+                  <label for="vehicle2"> Humor/Satire</label><br>
+                  <label for="fname">Other</label>
+                   <input type="text" id="fname" name="fname"><br><br>
+
+                <!--TEXT-->
+                    <label for="message">Please<strong> briefly</strong> explain your main reasons for using the Ottawa Public Library</label><br>
+                  <textarea id="message" name="message" placeholder="Type your message here" rows="4" required></textarea><br>
+
+                 <!-- SUBMIT BUTTON -->
+                <input type="submit" value="Submit">
+
                 <div class="slider">
                     <nav class="left_nav">
                         <a href="#image-1">
@@ -59,61 +111,6 @@
         </div>
     </div>
 
-    <!-- FORM -->   
-<h2>Ottawa Public Libaray Experience Survey </h2>
-
-<form action="/action_page.php">
-
-  <!-- RADIO BUTTON --> 
-  <label for="radio">Which language do you primarily read books in? (select one)</label><br>
-    <input type="radio" id="French" name="language" value="French">
-    <label for="French">French</label><br>
-    <input type="radio" id="English" name="language" value="English">
-    <label for="English">English</label><br>
-    <input type="radio" id="Other" name="language" value="Other">
-    <label for="Other">Other</label><br><br>
-
-
-<!-- LIST --> 
-    <label for="frequency">How often do you find what you are looking for in your preferrred reading language?</label> 
-    <select name="frequency" id="frequency">
-        <option value="(Select One)">(Select One)</option> 
-        <option value="Always">Always</option>
-        <option value="Sometimes">Sometimes</option> 
-        <option value="Often">Often</option> 
-        <option value="Rarely">Rarely</option> 
-        <option value="Never">Never</option> 
-    </select><br><br>
-
-<!-- MULTIPLE SELECT BUTTON -->
-<label for="checkbox">Which book genres do you read? (select all that apply)</label><br>
-    <input type="checkbox" id="g1" name="g1" value="Fiction">
-  <label for="vehicle1"> Fiction</label><br>
-  <input type="checkbox" id="g2" name="g2" value="Non-Fiction">
-  <label for="vehicle2"> Non-Fiction</label><br>
-  <input type="checkbox" id="g3" name="g3" value="Science Fiction">
-  <label for="vehicle3"> Science Fiction</label><br>
-  <input type="checkbox" id="g4" name="g4" value="Fantasy">
-  <label for="vehicle2"> Fantasy</label><br>
-  <input type="checkbox" id="g5" name="g5" value="Romance">
-  <label for="vehicle2"> Romance</label><br>
-  <input type="checkbox" id="g6" name="g6" value="Horror">
-  <label for="vehicle2"> Horror</label><br>
-  <input type="checkbox" id="g7" name="g7" value="Poetry">
-  <label for="vehicle2"> Poetry</label><br>
-  <input type="checkbox" id="g8" name="g8" value="Humor/Satire">
-  <label for="vehicle2"> Humor/Satire</label><br>
-  <label for="fname">Other</label>
-   <input type="text" id="fname" name="fname"><br><br>
-
-<!--TEXT-->
-    <label for="message">Please<strong> briefly</strong> explain your main reasons for using the Ottawa Public Library</label><br>
-  <textarea id="message" name="message" placeholder="Type your message here" rows="4" required></textarea><br>
-
- <!-- SUBMIT BUTTON -->
-<input type="submit" value="Submit">
-
-</form> 
 
 <p id="signature">Site created by Amani, Sara, Olivia</p> 
 
