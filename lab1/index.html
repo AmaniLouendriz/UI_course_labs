@@ -14,7 +14,7 @@
                 <p>We are conducting some research and we would love to know your thoughts about Ottawa Public Library website.</p>
                 <a class="btn" href="https://biblioottawalibrary.ca/en" title="Have a look at OPL" target="_blank">Explore the website</a><br><br> 
                     <!-- FORM -->   
-                <h2>Ottawa Public Libaray Experience Survey </h2>
+                <h2>Ottawa Public Library Experience Survey </h2>
 
                   <!-- RADIO BUTTON --> 
                   <label for="radio">Which language do you primarily read books in? (select one)</label><br>
@@ -37,8 +37,13 @@
                         <option value="Never">Never</option> 
                     </select><br><br>
 
+                    <!-- ANOTHER TEXT QUESTION -->
+                    <label for="frequency1">What information is the most difficult to find on our library website? (Please state briefly)</label>
+                    <textarea id="message1" name="message1" placeholder="Type yoour message here" rows="6" required></textarea><br><br>
+
+
                 <!-- MULTIPLE SELECT BUTTON -->
-                <label for="checkbox">Which book genres do you read? (select all that apply)</label><br>
+                <label for="checkbox">Which book genre(s) do you read? (select all that apply)</label><br>
                     <input type="checkbox" id="g1" name="g1" value="Fiction">
                   <label for="vehicle1"> Fiction</label><br>
                   <input type="checkbox" id="g2" name="g2" value="Non-Fiction">
@@ -58,9 +63,24 @@
                   <label for="fname">Other</label>
                    <input type="text" id="fname" name="fname"><br><br>
 
+                    <!-- ANOTHER RADIO BUTTON QUESTION -->
+                   <label for="frequency2">Why do you primarily use the library and its services?</label>
+                    <textarea id="message2" name="message2" placeholder="Type yoour message here" rows="6" required></textarea><br><br>
+                    <input type="radio" id="Lesiure" name="language" value="Lesiure">
+                    <label for="Lesiure">Lesiure</label><br>
+
+                    <input type="radio" id="Study" name="language" value="Study">
+                    <label for="Study">Study or education</label><br>
+
+                    <input type="radio" id="Work" name="language" value="Work">
+                    <label for="Work">Work related reasons</label><br>
+
+                    <input type="radio" id="Other1" name="language" value="Other1">
+                    <label for="Other1">Other</label><br><br>
+
                 <!--TEXT-->
-                    <label for="message">Please<strong> briefly</strong> explain your main reasons for using the Ottawa Public Library</label><br>
-                  <textarea id="message" name="message" placeholder="Type your message here" rows="4" required></textarea><br>
+                    <label for="message">If you have anything you would like to add or which you feel may improve the services we offer, please write a comment or suggestion below</label><br>
+                  <textarea id="message" name="message" placeholder="Type yoour message here" rows="6" required></textarea><br>
 
                  <!-- SUBMIT BUTTON -->
                 <input type="submit" value="Submit">
