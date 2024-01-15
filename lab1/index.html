@@ -13,8 +13,11 @@
             <form id="OPL_form">
                 <p>We are conducting some research and we would love to know your thoughts about Ottawa Public Library website.</p>
                 <a class="btn" href="https://biblioottawalibrary.ca/en" title="Have a look at OPL" target="_blank">Explore the website</a><br><br> 
-                    <!-- FORM -->   
-                <h2>Ottawa Public Library Experience Survey </h2>
+  
+                <!-- FORM -->   
+                <div class="formBorder">
+
+                <h2>Ottawa Public Library Customer Experience Survey </h2>
 
                   <!-- RADIO BUTTON --> 
                   <label for="radio">Which language do you primarily read books in? (select one)</label><br>
@@ -44,7 +47,8 @@
 
                 <!-- MULTIPLE SELECT BUTTON -->
                 <label for="checkbox">Which book genre(s) do you read? (select all that apply)</label><br>
-                    <input type="checkbox" id="g1" name="g1" value="Fiction">
+                <!--<div class="left">-->
+                  <input type="checkbox" id="g1" name="g1" value="Fiction">
                   <label for="vehicle1"> Fiction</label><br>
                   <input type="checkbox" id="g2" name="g2" value="Non-Fiction">
                   <label for="vehicle2"> Non-Fiction</label><br>
@@ -62,10 +66,12 @@
                   <label for="vehicle2"> Humor/Satire</label><br>
                   <input type="checkbox" id="g9" name="g9" value="Other2">
                   <label for="fname">Other</label>
-                   <input type="text" id="fname" name="fname"><br><br>
+                  <input type="text" id="fname" name="fname"><br><br>
+                
+
 
                     <!-- ANOTHER RADIO BUTTON QUESTION -->
-                   <label for="frequency2">Why do you primarily use the library and its services?</label><br>
+                    <label for="frequency2">Why do you primarily use the library and its services?</label><br>
                     <input type="radio" id="Lesiure" name="language" value="Lesiure">
                     <label for="Lesiure">Lesiure</label><br>
 
@@ -81,10 +87,16 @@
 
                 <!--TEXT-->
                     <label for="message">If you have anything you would like to add or which you feel may improve the services we offer, please write a comment or suggestion below</label><br>
-                  <textarea id="message" name="message" placeholder="Type your message here" rows="6" cols="60" required></textarea><br>
+                    <textarea id="message" name="message" placeholder="Type your message here" rows="6" cols="60" required></textarea><br>
+                  
 
                  <!-- SUBMIT BUTTON -->
                 <input type="submit" value="Submit">
+              </div> 
+
+
+              
+                
 
                 <div class="slider">
                     <nav class="left_nav">
@@ -128,6 +140,7 @@
                         </a>     
                     </div>
                 </div>
+
             </form>
         </div>
     </div>
