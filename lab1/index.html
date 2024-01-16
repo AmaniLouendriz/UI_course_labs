@@ -11,7 +11,7 @@
         <h1 class="title">Welcome to the Ottawa Public Library Survey!</h1>
         <div class="form_text">
             <form id="OPL_form">
-                <p>We are conducting some research and we would love to know your thoughts about Ottawa Public Library website.</p>
+                <p>Thank you for taking the time to participate in the Ottawa Public Survey! We are conducting some research and we would love to know your thoughts about the Ottawa Public Library website! Please respond honestly and openly. Your feedback is anonymous, so don't hesitate to share your thoughts!</p>
                 <a class="btn" href="https://biblioottawalibrary.ca/en" title="Have a look at OPL" target="_blank">Explore the website</a><br><br> 
   
                 <!-- FORM -->   
@@ -30,12 +30,12 @@
 
 
                 <!-- LIST --> 
-                    <label for="frequency">How often do you find what you are looking for in your preferrred reading language?</label> 
+                    <label for="frequency">How often do you find what you are looking for in your preferred reading language?</label> 
                     <select name="frequency" id="frequency">
                         <option value="(Select One)">(Select One)</option> 
                         <option value="Always">Always</option>
+                        <option value="often">Often</option> 
                         <option value="Sometimes">Sometimes</option> 
-                        <option value="Often">Often</option> 
                         <option value="Rarely">Rarely</option> 
                         <option value="Never">Never</option> 
                     </select><br><br>
@@ -85,9 +85,37 @@
                     <label for="Other1">Other</label>
                     <input type="text" id="fname1" name="fname1"><br><br>
 
+
+               <!--LIST-->
+                <label for="frequency3">Have you ever sought technical assistance for using the library's website or online resources?</label> 
+                <select name="frequency3" id="frequency3">
+                    <option value="(Select One)">(Select One)</option> 
+                    <option value="Always">Always</option>
+                    <option value="Often">Often</option> 
+                    <option value="Sometimes">Sometimes</option> 
+                    <option value="Rarely">Rarely</option> 
+                    <option value="Never">Never</option> 
+                </select><br><br>
+
+                <!--LIST-->
+                <label for="frequency4">How do you prefer to receive updates and information about library events or changes to services?</label> 
+                <select name="frequency4" id="frequency4">
+                    <option value="(Select One)">(Select One)</option> 
+                    <option value="Newsletter">Newsletter</option>
+                    <option value="Email">Email</option> 
+                    <option value="Social Media">Social Media</option> 
+                    <option value="Text Messages">Text Messages</option> 
+                    <option value="Not at all">Not at all</option> 
+                </select><br><br>
+
                 <!--TEXT-->
-                    <label for="message">If you have anything you would like to add or which you feel may improve the services we offer, please write a comment or suggestion below</label><br>
-                    <textarea id="message" name="message" placeholder="Type your message here" rows="6" cols="60" required></textarea><br>
+                    <label for="message">Please share your thoughts on the online resources and services designed for children or youth. Are there any additional features or content you would like to see specifically for younger audiences?</label><br>
+                    <textarea id="message" name="message" placeholder="Type your comments here" rows="6" cols="60" required></textarea><br>
+
+
+                <!--TEXT-->
+                    <label for="message">If you have anything you would like to add or which you feel may improve the services we offer, please write a comment or suggestion below.</label><br>
+                    <textarea id="message" name="message" placeholder="Type your comments here" rows="6" cols="60" required></textarea><br>
                   
 
                  <!-- SUBMIT BUTTON -->
