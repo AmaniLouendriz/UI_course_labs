@@ -8,20 +8,23 @@
     font-family:"Garamond",sans-serif;
 }
 
+/* first title styles */
 .title {
     text-align: center;
-    padding: 50px;
+    padding: 2rem;
     font-family: Futura,Garamond, sans-serif;
     text-transform: uppercase;
     background-color: rgb(210, 210, 210,0.6);
     letter-spacing: 0.2rem;
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 2rem;
 }
 
 .form_bg {
     /* initializing bg-image and bg-image-opacity variables  */
     --bg-image:url("../images/BackGroundImage.jpg");
     --bg-image-opacity:.6;
-    /* isolation: isolate; */
 }
 
 .form_bg::after { 
@@ -42,9 +45,8 @@
 
 .form_text {
     background-color: rgb(210, 210, 210,0.8);
-    margin: 5rem auto;
-    align-items: center;
-    padding: 50px;
+    margin: 2rem auto;
+    padding: 2rem;
     border-radius: 15px;
     text-align: center;
     width: 70rem;
@@ -56,8 +58,9 @@ p {
     line-height: 40px;
 }
 
+/* this btn class is used for both buttons */
+
 .btn {
-    /* border: 2px solid black; */
     padding: 12px;
     border-radius: 5px;
     background-color: rgb(98, 135, 158);
@@ -77,16 +80,10 @@ p {
 
 .btn:hover {
     background-color: rgb(20, 51, 70) ;
-
 }
 
-/* carousel configuration */
-img {
-    display: block;
-    /* look more into max-width */
-    max-width: 100%;
-    /* border: 2px solid darkblue; */
-}
+/* carousel configuration*/
+
 
 .slider {
     border: 5px solid rgb(11, 11, 21);
@@ -96,11 +93,9 @@ img {
     gap: 15px;
     overflow: hidden;
     height: 40rem;
-    /* width: 60rem; */
     padding: 5px;
-    box-shadow: 5px 5px 2px #7f3f00;
+    box-shadow: 1px 1px 2px;
     border-radius: 6px;
-
 }
 
 .gallery {
@@ -129,6 +124,7 @@ img {
     overflow-x: hidden;
     border: 2px solid rgb(26, 9, 10);
     border-radius: 5px;
+    display: block;
 }
 
 .left_nav a {
@@ -156,16 +152,15 @@ img {
   padding: 20px; /* Add padding as needed */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: left;
-
+  margin: 0 auto;
 }
 
 .question {
     padding: 1rem;
-    align-items: center;
 }
 
 
- .container {
+.container {
     display: block;
     position: relative;
     padding-left: 1rem;
@@ -206,16 +201,30 @@ input[type="checkbox"] {
 .root{
     display:flex;
     height:100%;
-    background-color: rgb(101, 164, 181);
-    z-index: 2;
-
+    background-color: rgb(20, 51, 70);
 }
 .footer{
     font-size:18px;
     margin:0 auto;
     color: #fff;
-    z-index: 3;
+}
 
+
+@media screen and (max-width: 600px) {
+    .title{
+        font-size: 1.5rem;
+    }
+    .form_text {
+        width: 30rem; 
+    }
+    .slider {
+        height: 20rem;
+
+    }
+    .question textarea {
+        min-width: 10rem;
+        width: 15rem;
+    }  
 }
 
 
