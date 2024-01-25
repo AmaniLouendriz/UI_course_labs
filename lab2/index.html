@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miam Miam</title>
+    <link rel="stylesheet" href="./styles/index.css">
+
+</head>
+<body>
+    <!-- Store title -->
+    <div class="header">
+        Welcome to Miam Miam Store
+    </div>
+
+    <!-- General menu -->
+
+    <div class="menu">
+        <h2> Our menu </h2>
+        <div class="left_btn">
+            <button onclick="go_to_customer_form()">Place Order</button>
+        </div>
+        <div class="products">
+        </div>
+    </div>
+
+    <!-- Tab links, each one with an onclick event associated with it -->
+    <div class="tab">
+        <button id="client" class="tablinks" disabled="true" onclick="open_section(event,this.id)">Client</button>
+        <button id="products" class="tablinks" disabled="true" onclick="open_section(event,this.id)">Products</button>
+        <button id="cart" class="tablinks" disabled="true" onclick="open_section(event,this.id)">Cart</button>
+    </div>
+
+
+    <!-- Customer form -->
+
+    <div id="customer" class="customer_form">
+        <h3>Client information</h3>
+        <p>Please fill your preferences </p>
+            <div id="custom_selectA">
+                <select name="type_diet" id="type_diet" onchange="">
+                    <option value=""></option> 
+                    <option value="vegetarian">Vegetarian</option>
+                    <option value="halal">Halal</option> 
+                    <option value="glutenFree">glutenFree</option> 
+                </select>
+            </div>
+
+        <p>Please select organic or no </p>
+        <div id="custom_selectB">
+            <select name="type_farm" id="type_farm" onchange="">
+                <option value=""></option> 
+                <option value="organic">Organic</option>
+                <option value="non organic">Non organic</option> 
+            </select>
+        </div>
+        <button onclick="send_for_products()">Find Products</button>
+    </div>
+
+    <!-- Products Filetered  -->
+    <div id="goods_hero" class="products_filtered_btn">
+        <div id="goods" class="products_filtered">
+        </div>
+        <button onclick="add_to_cart()">Add to Cart</button>
+    </div>
+
+    <!-- Cart -->
+    <div id="Pay" class="cart">
+        <p id="sum_tot"></p>
+        <div class="cart_items"></div>
+        <p id="sum"></p>
+    </div>
+
+    <!-- footer -->
+    <div class="footer">
+        Made with &#x1F90D; by Amani, Sara and Olivia
+    </div>
+
+
+    <script src="./scripts/main.js"></script>
+    <script src="./scripts/customer.js"></script>
+
+
+    
+</body>
+</html>
