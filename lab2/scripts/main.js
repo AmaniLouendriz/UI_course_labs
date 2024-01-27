@@ -61,7 +61,7 @@ const construct_list_goods = (items,products,flag) => {
 
         var heading = document.createElement("h3");
         heading.className = "price";
-        heading.innerHTML = product.price;
+        heading.innerHTML = `${product.price} $`;
         divInfo.appendChild(heading);
 
         var heading = document.createElement("h3");
@@ -101,70 +101,6 @@ const construct_list_goods = (items,products,flag) => {
     }
 }
 
-const add_to_cart = ()=>{
-    change_tab_style("products","cart");
-    // enabling products tab
-    document.getElementById("products").disabled = false;
-    // getting the section of filtered goods
-    let section_filtered = document.getElementsByClassName("products_filtered_btn");
-    // getting the checkboxes
-    let ele = document.getElementsByName("product");
-    // hiding the section of filtered goods
-    section_filtered[0].style.display = "none";
-    // getting the cart section
-    // next_section contains the whole cart section
-    let next_section = document.getElementsByClassName("cart");
-    // next_section_inner just contains the list of chosen products by the user
-    let next_section_inner = document.getElementsByClassName("cart_items");
-    // para contains the text (You selected)
-    let para = document.getElementById("sum_tot");
-    // sum contains the total of the items purchased
-    let sum = document.getElementById("sum");
-
-    next_section[0].style.display = "block";
-
-
-    para.innerHTML = "";
-    sum.innerHTML = "";
-    para.style.display = "block";
-
-    para.innerHTML = "You selected : ";
-
-    para.appendChild(document.createElement("br"));
-
-
-    // emptying the cart section to not have inconsistencies
-    for (i = 0;i<next_section_inner.length;i++){
-        next_section_inner[i].innerHTML = "";
-        next_section_inner[i].style.display = "flex";
-        next_section_inner[i].style.flexdirection = "row";
-
-    }
-
-
-    let choosenProduct = [];
-
-	
-	for (i = 0; i < ele.length; i++) { 
-		if (ele[i].checked) {
-			choosenProduct.push(JSON.parse(ele[i].dataset.object));
-		}
-	}
-
-    construct_list_goods(choosenProduct,next_section_inner,0);
-    sum.appendChild(document.createTextNode("The total is: "+ calculate_total(choosenProduct)+"$"));
-    next_section[0].appendChild(sum);
-}
-
-const calculate_total = (products)=>{
-    let s = 0;
-    for (i = 0;i<products.length;i++){
-        // console.log("the single product is",products[i]);
-        s = s+ parseFloat(products[i].price);
-    }
-    return s;
-}
-
 const show_products = (items) => {
     let menu = document.getElementsByClassName("menu");
     menu[0].style.display = "block";
@@ -179,6 +115,59 @@ async function main() {
     items.sort(comparePrice);
 
     show_products(items);
+}
+
+// open section is a function both called when clicking on a tab, or by the parent function go_to_customer_form()
+const open_section = (evt,id) => {
+    let tabs = ["client","products","cart"];
+    // getting the sections that hold actual information 
+    client = document.getElementById("customer");
+    products = document.getElementById("goods_hero");
+    cart = document.getElementById("Pay");
+    
+
+    let new_id = "";
+
+    // based on the tab id received, I can see which section I want to show.
+    if (id == "client") {
+        new_id = "customer";
+    } else if (id == "products") {
+        new_id = "goods_hero";
+    } else if (id == "cart") {
+        new_id = "Pay";
+    }
+
+    // to be sure, hiding all sections
+
+    client.style.display = "none";
+    products.style.display = "none";
+    cart.style.display = "none";
+
+    // removing active classname on all tablinks
+    tablinks = document.getElementsByClassName("tablinks");
+	for (i = 0; i < tablinks.length; i++) {
+		tablinks[i].className = tablinks[i].className.replace(" active", "");
+	}
+
+    // display the appropriate section
+    document.getElementById(new_id).style.display = "block";  
+    if (new_id == "customer"){
+        document.getElementById("type_diet").value = "";
+        document.getElementById("type_farm").value = "";
+    }
+
+    // enabling all tabs that are previous the current tab I am in.
+
+    for (i = 0;i<tabs.indexOf(id);i++){
+        document.getElementById(tabs[i]).disabled = false;
+    }
+    // disabling the button id where I am.
+    document.getElementById(id).disabled = true;
+
+    // adding an active className on the current one
+    if (evt != null) {
+        evt.currentTarget.className += " active";
+    }
 }
 
 main();

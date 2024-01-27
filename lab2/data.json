@@ -37,18 +37,18 @@
             "src":"./images/kiwi.png"
         },
         {
-            "name":"Ananas",
+            "name":"Pineapple",
             "price": "5",
             "type": ["vegetarian","halal","glutenFree"],
             "type_of_farming": "organic",
-            "src":"./images/kiwi.png"
+            "src":"./images/pineapple_picture.png"
         },
         {
             "name":"Oat Meal",
             "price": "5",
             "type": ["vegetarian","halal","glutenFree"],
             "type_of_farming": "organic",
-            "src":"./images/kiwi.png"
+            "src":"./images/oat.jpg"
         },
         {
             "name":"Tomato",
@@ -77,6 +77,13 @@
             "type": ["halal"],
             "type_of_farming": "non organic",
             "src":"./images/chocolateMuffins.jpeg"
+        },
+        {
+            "name":"Rice",
+            "price": "8.5",
+            "type": ["vegetarian","halal","glutenFree"],
+            "type_of_farming": "non organic",
+            "src":"./images/rice.jpg"
         }
     ]
 }

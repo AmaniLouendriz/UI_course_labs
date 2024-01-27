@@ -52,7 +52,8 @@ async function send_for_products() {
 
     // showing the products
     show_filtered_products(picked_items);
-    
+    // document.getElementById("type_diet").value = "";
+    // document.getElementById("type_farm").value = "";    
 }
 
 
@@ -78,6 +79,83 @@ const show_filtered_products = (picked_items) => {
     construct_list_goods(picked_items,products_filtered,1);
 }
 
+const add_to_cart = ()=>{
+    change_tab_style("products","cart");
+    // enabling products tab
+    document.getElementById("products").disabled = false;
+    // getting the section of filtered goods
+    let section_filtered = document.getElementsByClassName("products_filtered_btn");
+    // getting the checkboxes
+    let ele = document.getElementsByName("product");
+    // hiding the section of filtered goods
+    section_filtered[0].style.display = "none";
+    // getting the cart section
+    // next_section contains the whole cart section
+    let next_section = document.getElementsByClassName("cart");
+    // next_section_inner just contains the list of chosen products by the user
+    let next_section_inner = document.getElementsByClassName("cart_items");
+    // para contains the text (You selected)
+    let para = document.getElementById("sum_tot");
+    // sum contains the total of the items purchased
+    let sum = document.getElementById("sum");
+    let btn = document.getElementsByClassName("back_btn");
+
+    for(i = 0;i<btn.length;i++){
+        btn[i].remove();
+    }
+
+    next_section[0].style.display = "block";
+
+
+    para.innerHTML = "";
+    sum.innerHTML = "";
+    para.style.display = "block";
+
+    para.innerHTML = "You selected : ";
+
+    para.appendChild(document.createElement("br"));
+
+
+    // emptying the cart section to not have inconsistencies
+    for (i = 0;i<next_section_inner.length;i++){
+        next_section_inner[i].innerHTML = "";
+        next_section_inner[i].style.display = "flex";
+        next_section_inner[i].style.flexdirection = "row";
+
+    }
+
+
+    let choosenProduct = [];
+
+	
+	for (i = 0; i < ele.length; i++) { 
+		if (ele[i].checked) {
+			choosenProduct.push(JSON.parse(ele[i].dataset.object));
+		}
+	}
+
+    construct_list_goods(choosenProduct,next_section_inner,0);
+    sum.appendChild(document.createTextNode("The total is: "+ calculate_total(choosenProduct)+"$"));
+    next_section[0].appendChild(sum);
+    //<button onclick="main()">Go back to home page</button>
+    back_btn = document.createElement("button");
+    back_btn.innerHTML = "Go Back to the gome page";
+    back_btn.className = "back_btn";
+    back_btn.onclick = go_back_homePage;
+    next_section[0].appendChild(back_btn);
+}
+
+const calculate_total = (products)=>{
+    let s = 0;
+    for (i = 0;i<products.length;i++){
+        // console.log("the single product is",products[i]);
+        s = s+ parseFloat(products[i].price);
+    }
+    s = s.toFixed(2);
+    return s;
+}
+
+
 // toggle the styles of the navbar
 const change_tab_style = (prev_id,curr_id)=>{
     let section = document.getElementById(curr_id);
@@ -88,50 +166,35 @@ const change_tab_style = (prev_id,curr_id)=>{
     }
 }
 
-// open section is a function both called when clicking on a tab, or by the parent function go_to_customer_form()
-const open_section = (evt,id) => {
-    let tabs = ["client","products","cart"];
-    // getting the sections that hold actual information 
-    client = document.getElementById("customer");
-    products = document.getElementById("goods_hero");
-    cart = document.getElementById("Pay");
+const go_back_homePage = ()=>{
+    let tab = document.getElementsByClassName("tab");
+    let customer = document.getElementsByClassName("customer_form");
+    let goods = document.getElementsByClassName("products_filtered_btn");
+    let cart = document.getElementsByClassName("cart");
 
-    let new_id = "";
-
-    // based on the tab id received, I can see which section I want to show.
-    if (id == "client") {
-        new_id = "customer";
-    } else if (id == "products") {
-        new_id = "goods_hero";
-    } else if (id == "cart") {
-        new_id = "Pay";
+    for (i = 0;i<tab.length;i++){
+        tab[i].style.display = "none"
+        // tab[i].innerHTML = ""
     }
 
-    // to be sure, hiding all sections
-
-    client.style.display = "none";
-    products.style.display = "none";
-    cart.style.display = "none";
-
-    // removing active classname on all tablinks
-    tablinks = document.getElementsByClassName("tablinks");
-	for (i = 0; i < tablinks.length; i++) {
-		tablinks[i].className = tablinks[i].className.replace(" active", "");
-	}
-
-    // display the appropriate section
-    document.getElementById(new_id).style.display = "block";  
-
-    // enabling all tabs that are previous the current tab I am in.
-
-    for (i = 0;i<tabs.indexOf(id);i++){
-        document.getElementById(tabs[i]).disabled = false;
+    for (i = 0;i<customer.length;i++){
+        customer[i].style.display = "none"
     }
-    // disabling the button id where I am.
-    document.getElementById(id).disabled = true;
 
-    // adding an active className on the current one
-    if (evt != null) {
-        evt.currentTarget.className += " active";
+    for (i = 0;i<goods.length;i++){
+        goods[i].style.display = "none"
     }
+
+    for (i = 0;i<cart.length;i++){
+        cart[i].style.display = "none"
+    }
+
+    let menu = document.getElementsByClassName("menu");
+
+    for (i = 0;i<menu.length;i++){
+        menu[i].style.display = "block"
+    }
+
+
 }
+
