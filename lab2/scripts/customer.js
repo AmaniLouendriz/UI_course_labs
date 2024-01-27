@@ -139,7 +139,7 @@ const add_to_cart = ()=>{
     next_section[0].appendChild(sum);
     //<button onclick="main()">Go back to home page</button>
     back_btn = document.createElement("button");
-    back_btn.innerHTML = "Go Back to the gome page";
+    back_btn.innerHTML = "Go Back to the home page";
     back_btn.className = "back_btn";
     back_btn.onclick = go_back_homePage;
     next_section[0].appendChild(back_btn);
