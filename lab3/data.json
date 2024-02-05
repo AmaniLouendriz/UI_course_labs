@@ -1,0 +1,101 @@
+
+{
+    "products":[
+        {
+            "name":"Apple",
+            "price": "1",
+            "type": ["vegetarian","glutenFree"],
+            "type_of_farming": "non organic",
+            "src":"./images/apple.png",
+            "category": "fruits"
+        },
+        {
+            "name":"Beef",
+            "price": "10",
+            "type": ["glutenFree"],
+            "type_of_farming": "non organic",
+            "src":"./images/beef.jpeg",
+            "category": "meat"
+        },
+        {
+            "name":"Chicken",
+            "price": "12",
+            "type": ["halal","glutenFree"],
+            "type_of_farming": "non organic",
+            "src":"./images/chicken.jpeg",
+            "category": "poultry"
+        },
+        {
+            "name":"Banana",
+            "price": "0.1",
+            "type": ["vegetarian","glutenFree"],
+            "type_of_farming": "non organic",
+            "src":"./images/banana.png",
+            "category": "fruits"
+        },
+        {
+            "name":"Kiwi basket",
+            "price": "5",
+            "type": ["vegetarian","glutenFree"],
+            "type_of_farming": "organic",
+            "src":"./images/kiwi.png",
+            "category": "fruits"
+        },
+        {
+            "name":"Pineapple",
+            "price": "5",
+            "type": ["vegetarian","glutenFree"],
+            "type_of_farming": "organic",
+            "src":"./images/pineapple_picture.png",
+            "category": "fruits"
+        },
+        {
+            "name":"Oat Meal",
+            "price": "5",
+            "type": ["vegetarian","halal"],
+            "type_of_farming": "organic",
+            "src":"./images/oat.jpg",
+            "category": "Grains"
+        },
+        {
+            "name":"Tomato",
+            "price": "2",
+            "type": ["vegetarian","glutenFree"],
+            "type_of_farming": "non organic",
+            "src":"./images/tomato.png",
+            "category": "vegetables"
+        },
+        {
+            "name":"Garlic",
+            "price": "0.5",
+            "type": ["vegetarian","glutenFree"],
+            "type_of_farming": "organic",
+            "src":"./images/garlic.png",
+            "category": "vegetables"
+        },
+        {
+            "name":"Salmon",
+            "price": "7",
+            "type": ["vegetarian","glutenFree"],
+            "type_of_farming": "non organic",
+            "src":"./images/salmon.jpg",
+            "category": "fish"
+        },
+        {
+            "name":"Chocolate Chips muffins",
+            "price": "6.49",
+            "type": ["vegetarian","halal"],
+            "type_of_farming": "non organic",
+            "src":"./images/chocolateMuffins.jpeg",
+            "category": "bakery"
+        },
+        {
+            "name":"Rice",
+            "price": "8.5",
+            "type": ["vegetarian","halal","glutenFree"],
+            "type_of_farming": "non organic",
+            "src":"./images/rice.jpg",
+            "category": "Grains"
+        }
+    ]
+}

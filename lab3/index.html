@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miam Miam</title>
+    <link rel="stylesheet" href="./styles/index.css">
+
+</head>
+<body>
+    <!-- Store title -->
+    <div class="header">
+        Welcome to Miam Miam Store
+    </div>
+
+    <!-- General menu -->
+
+    <div class="menu">
+        <h2> Our menu </h2>
+        <div class="left_btn">
+            <button onclick="go_to_customer_form()">Place Order</button>
+        </div>
+        <div class="filtering_btns">
+            <button onclick="filter('vegetables','products')">Vegetables</button>
+            <button onclick="filter('fruits','products')">Fruits</button>
+            <button onclick="filter('dairy','products')">Dairy</button>
+            <button onclick="filter('meat','products')">Meat</button>
+            <button onclick="filter('poultry','products')">Poultry</button>
+            <button onclick="filter('Grains','products')">Grains</button>
+            <button onclick="filter('fish','products')">fish</button>
+            <button onclick="filter('bakery','products')">Bakery</button>
+            <button id="reset" onclick="filter('reset','products')">reset all filters</button>
+        </div>
+       
+        <div class="products">
+        </div>
+    </div>
+
+    <!-- Tab links, each one with an onclick event associated with it -->
+    <div class="tab">
+        <button id="client" class="tablinks" disabled="true" onclick="open_section(event,this.id)">Client</button>
+        <button id="products" class="tablinks" disabled="true" onclick="open_section(event,this.id)">Products</button>
+        <button id="cart" class="tablinks" disabled="true" onclick="open_section(event,this.id)">Cart</button>
+    </div>
+
+
+    <!-- Customer form -->
+
+    <div id="customer" class="customer_form">
+        <h3>Client information</h3>
+        <p>Please fill your preferences </p>
+            <div id="custom_selectA">
+                <select name="type_diet" id="type_diet" onchange="">
+                    <option value=""></option> 
+                    <option value="vegetarian">Vegetarian</option>
+                    <option value="halal">Halal</option> 
+                    <option value="glutenFree">glutenFree</option> 
+                </select>
+            </div>
+
+        <p>Please select organic or no </p>
+        <div id="custom_selectB">
+            <select name="type_farm" id="type_farm" onchange="">
+                <option value=""></option> 
+                <option value="organic">Organic</option>
+                <option value="non organic">Non organic</option> 
+            </select>
+        </div>
+        <button onclick="send_for_products()">Find Products</button>
+    </div>
+
+    <!-- Products Filtered  -->
+    <div id="goods_hero" class="products_filtered_btn">
+        <div class="filtering_btns">
+            <button onclick="filter_user('vegetables','products_filtered')">Vegetables</button>
+            <button onclick="filter_user('fruits','products_filtered')">Fruits</button>
+            <button onclick="filter_user('dairy','products_filtered')">Dairy</button>
+            <button onclick="filter_user('meat','products_filtered')">Meat</button>
+            <button onclick="filter_user('poultry','products_filtered')">Poultry</button>
+            <button onclick="filter_user('Grains','products_filtered')">Grains</button>
+            <button onclick="filter_user('fish','products_filtered')">fish</button>
+            <button onclick="filter_user('bakery','products_filtered')">Bakery</button>
+            <button id="reset2" onclick="filter_user('reset2','products_filtered')">reset all filters</button>
+        </div>
+        <div id="goods" class="products_filtered">
+        </div>
+        <button id="adder" onclick="add_to_cart()">Add to Cart</button>
+    </div>
+
+    <!-- Cart -->
+    <div id="Pay" class="cart">
+        <p id="sum_tot"></p>
+        <div class="cart_items"></div>
+        <p id="sum"></p>
+    </div>
+
+    <!-- footer -->
+    <div class="footer">
+        Made with &#x1F90D; by Amani
+    </div>
+
+
+    <script src="./scripts/main.js"></script>
+    <script src="./scripts/customer.js"></script>
+
+
+    
+</body>
+</html>
